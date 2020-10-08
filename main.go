@@ -10,7 +10,7 @@ type coin struct {
 	sideUp string
 }
 
-type face interface {
+type simulator interface {
 	coinSide() string
 }
 
@@ -30,8 +30,8 @@ func (c *coin) coinSide() string {
 	return c.sideUp
 }
 
-func info(f face) {
-	fmt.Println("The coin landed on", f.coinSide())
+func info(s simulator) {
+	fmt.Println("The coin landed on", s.coinSide())
 }
 
 func main() {
